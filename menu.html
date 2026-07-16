@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        img{
+            width:100%;
+            height: 90vh;
+            margin-bottom: 80px;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: 30px;
+        }
+        .circle{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: yellow;
+            gap: 20px;
+        }
+        h1{
+            font-size: 38px;
+            color: white;
+            letter-spacing: 5px;
+            
+        }
+        .navbar{
+            position: absolute;
+            top: 0;
+            left: 0;  
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+             box-sizing: border-box;
+             color:white;  
+        }
+        .navbar ul{
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            text-decoration: none;
+            margin-left: 22%;
+            margin-right: 40px;
+            font-size: 25px;
+        }
+        .navbar ul li a{
+            color: white;
+            text-decoration:none;
+        }
+        .btn{
+            border:1px solid  white;
+            padding: 14px 50px;
+            border-radius: 5px;
+            background: none; 
+            color:white;
+            font-size:16px;
+            margin-right: 20px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }  
+        .btn:hover{
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+        .above{
+            top: 25%;
+             /* left: 30%; */
+            text-align: center;
+            position: absolute;
+         }
+          .above h1{
+            color: white;
+            font-size: 90px;
+          }
+          .above p{
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            margin-left: 25%;
+            margin-right: 26%;
+          }
+         .main-course{
+            display: flex;
+             
+            background: white;
+            align-items: flex-start;
+            gap: 70px;
+         }
+         .food-img{
+            width: 25%;
+         }
+         .food-img img{
+            width: 80%;
+            height: auto;
+            margin: 0;
+         }
+         .main-content{
+            width: 80%;
+         }
+         html{
+            scroll-behavior: smooth;
+         }
+         .main-content h2{
+            font-size: 50px;
+            margin-bottom: 30px;
+         }
+         .main-content p{
+            font-size: 20px;
+            /* line-height: 40px; */
+            color: gray;
+            margin-bottom: 50px;
+         }
+         .signature-box{
+            display: flex;
+            margin-bottom: 40px;
+         }
+         .signature-box small{
+            font-size: 30px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            letter-spacing: 2px;
+         }
+         .signature-box h2{
+            font-size: 30px;
+         }
+         .signature-box img{
+            width: 170px;
+            height: 170px;
+            object-fit: contain;
+            margin-right: 25px;
+         }
+         .signature-box p{
+           font-size: 20px;
+           margin: 10px 0;
+         }
+         .signature-box span{
+            font-weight: bold;
+            font-size: 22px;
+
+         }
+         .menu-list{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 150px;
+            
+         }
+         .food-item{
+           /* padding-bottom: 15px; */
+           gap: 100px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed gray;
+         }
+         .food-item h4{
+            font-size: 20px;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            margin-bottom: 20px;
+         }
+         .food-item span{
+            font-weight: bold;
+            color: black;
+         }
+         .food-item p{
+            font-size: 15px;
+            color: gray;
+         }
+         .reservation{
+            height:600px;
+            background:url("https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600") center/cover fixed;
+            position:relative;
+            }
+
+            .reservation::before{
+            content:""; 
+            position:absolute;
+            inset:0; 
+            background:rgba(0,0,0,.6);
+              }
+
+        .reserve-box{
+          position:absolute;
+          inset:0;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction:column;
+          color:white;
+          z-index:2;
+         text-align:center;
+         }
+
+         .reserve-box img{
+           width:120px;
+            margin-bottom:10px;
+          }
+
+          .reserve-box h2{
+             font-size:55px;
+             margin-bottom:20px;
+             }
+
+          .reserve-box p{
+            width:600px;
+            /* max-width:90%; */
+            line-height:28px;
+            }
+
+   .reserve-btn{
+    margin:30px 0;
+    display: inline-block;
+    border:2px solid #fff;
+    color:white;
+    text-decoration:none;
+     padding:14px 40px; 
+     transition: .3s;
+   }
+   .reserve-btn:hover{
+    background: white;
+    color: black;
+   }
+     
+      .phone{
+           font-size:45px;
+           font-weight:bold;
+           }
+            footer{
+                 background: rgba(1, 1, 1,1); 
+                color: white;
+                height: auto;
+                padding: 70px;
+             }
+            .footer{
+               display: flex;
+               justify-content: space-between;
+               align-items: flex-start;
+               gap: 60px;
+            }
+            .logo1{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            
+            }
+            .logo1-circle{
+                width: 30px;
+                height: 30px;
+                background: gold;
+                border-radius: 50%;
+            }
+            .logo1 h2{
+                letter-spacing: 5px;
+                font-size: 10px;
+                
+            }
+            
+            .foohead{
+                flex: 1;
+            }
+            .foohead p{
+                line-height: 1.8;
+                margin: 1px 0;
+                font-size: 18px;
+            }
+            .foohead h2{
+                margin-bottom: 30px;
+                font-size: 30px;
+            }
+            
+            .foot{
+                display: flex;
+                gap: 20px;
+            }
+            .foohead i{
+                font-size: 22px;
+                cursor: pointer;
+                color: gold;
+            }
+            .foohead i:hover{
+                color: white;
+            }
+            
+            .foohead ul{
+                list-style: none;
+                padding: 0;
+                margin-top: 20px;
+                display: block;
+                flex-direction: column;
+            }
+            .foohead ul li{
+                display: block;
+                margin: 2px 0;
+                text-align: left;
+                
+            }
+            .foohead ul li a{
+                text-decoration: none;
+                color: white;
+                font-size: 18px;
+            }
+            
+            .location p,
+            .hours p{
+                margin: 15px 0;
+            }
+            .btnss{
+                margin-top: 25px;
+                padding: 15px 35px;
+                background: transparent;
+                color: white;
+                border: 2px solid white;
+                letter-spacing: 3px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 15px;
+            }
+            
+            .btnss:hover{
+                color: black;
+                background-color: white;
+            }
+            .bottom{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 70px;
+                border-top: 2px solid gray;
+                padding-top: 30px;
+            }
+    </style>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <section class="container">
+        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="FOOD Image">
+    <div class="navbar">
+        <div class="logo">
+        <div class="circle"></div>
+        <h1>NYUS</h1>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+           <button class="btn">RESERVATION</button>
+    </div>
+       <div class="above">
+        <h1>Our Menu</h1>
+        <p>From flavorful appetizers to authentic main courses and delightful desserts, every dish is prepared with passion and served with care.
+         </p>
+       </div>
+    </section>
+    <section class="main-course">
+        <div class="food-img">
+            <img src="https://nitinfoodcourt.unaux.com/wp-content/uploads/2020/07/appetizer-menu-header.png" alt=""/>
+        </div>
+        <div class="main-content">
+                <h2>Appetizer</h2>
+                <p>Perfectly seasoned and freshly prepared, our appetizers offer the ideal beginning to an unforgettable dining experience.</p>
+            <div class="signature-box">
+                    <img src="https://nitinfoodcourt.unaux.com/wp-content/uploads/2020/07/plate-of-cookie-with-strawberry.png" alt=""/>
+                <div>
+                    <small>Signature</small>
+                    <h2>Afgani Chicken</h2>
+                    <p>Creamy yogurt-marinated chicken grilled to smoky perfection.</p>
+                    <span>₹349</span>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div>
+                    <div class="food-item">
+                        <h4>Veg Spring Rolls<span>₹180</span></h4>
+                        <p>Crispy rolls filled with fresh vegetables, served with sweet chili sauce</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Paneer Tikka<span>₹280</span></h4>
+                        <p>Cottage cheese marinated in spices and grilled in a tandoor.</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Hara Bhara Kebab<span>₹240</span></h4>
+                        <p>Spinach and green pea patties seasoned with aromatic herbs.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="food-item">
+                        <h4>Crispy Corn<span>₹220</span></h4>
+                        <p>Golden fried sweet corn tossed with peppers and spices.</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Chicken 65<span>₹320</span></h4>
+                        <p>Deep-fried boneless chicken with authentic South Indian spices.</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Fish Fingers<span>₹420</span></h4>
+                    <p>Crispy battered fish strips served with tartar sauce.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="food-item">
+                        <h4>Fish Pepper Fry<span>₹420</span></h4>
+                        <p>Fresh prawns stir-fried with black pepper and curry leaves.</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Chilli Chicken<span>₹350</span></h4>
+                        <p>Boneless chicken tossed with onions, capsicum, and spicy sauce.</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Mutton Seekh Kebab<span>₹440</span></h4>
+                        <p>Minced mutton mixed with herbs and grilled on skewers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section class="main-course">
+        <div class="food-img">
+            <img src="https://nitinfoodcourt.unaux.com/wp-content/uploads/2020/07/appetizer-menu-header.png" alt="">
+        </div>
+        <div class="main-content">
+            <h2>Main Course</h2>
+            <p>Enjoy our chef's handcrafted main courses prepared with premium with <br>
+                premium ingredients and served fresh every day.
+            </p>
+            <div class="signature-box">
+                <img src="https://nitinfoodcourt.unaux.com/wp-content/uploads/2020/07/plate-of-cookie-with-strawberry.png" alt=""/>
+                <div>
+                <small>Signature</small>
+                <h2>Hyderabadi Chicken Dum Biryani</h2>
+                <p>Authentic basmati rice layered with tender chicken, aromatic spices,<br> and slow-cooked in the traditional dum style.</p>
+                 <span>₹349</span>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div>
+                    <div class="food-item">
+                        <h4>Hyderabadi Dum Biryani<span>₹349</span></h4>
+                        <p>Traditional dum Biryani</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Mutton Dum Biryani<span>₹449</span></h4>
+                        <p>Slow-cooked mutton biryani</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Butter Chicken<span>₹380</span></h4>
+                        <p>Creamy tomato-based chicken curry</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="food-item">
+                        <h4>Kadai Chicken<span>₹340</span></h4>
+                        <p>Chicken cooked with bell peppers & spices</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Paneer Butter Masala<span>₹340</span></h4>
+                        <p>Cottage cheese in rich buttery gravy</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Kadai Paneer<span>₹280</span></h4>
+                        <p>Paneer cooked with onions & capsicum</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="food-item">
+                        <h4>Dal Tadka<span>₹180</span></h4>
+                        <p>Yellow lentils tempered with spices</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Fish Curry<span>₹420</span></h4>
+                        <p>Coastal-style fish curry</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>Shahi Paneer<span>₹280</span></h4>
+                        <p>Rich creamy paneer curry</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-course">
+            <div class="food-img">
+                <img src="https://nitinfoodcourt.unaux.com/wp-content/uploads/2020/07/appetizer-menu-header.png" alt=""/>
+            </div>
+            <div class="main-content">
+                <h2>Deserts</h2>
+                <p>We are passionate about serving delicious food made with fresh ingredients and authentic flavors. Our chefs prepare every dish with care, while our friendly staff ensures a warm and memorable dining experience for every guest.</p>
+                <div class="signature-box">
+                    <img src="https://nitinfoodcourt.unaux.com/wp-content/uploads/2020/07/plate-of-cookie-with-strawberry.png" alt=""/>
+                    <div>
+                        <small>Signature</small>
+                        <h2>New York Cheese Cake</h2>
+                        <p>Creamy baked cheesecake served with a fresh berry sauce.</p>
+                        <span>₹249</span>
+                    </div>
+                </div>
+                <div class="menu-list">
+                    <div>
+                        <div class="food-item">
+                            <h4>Gulab Jamun<span>₹120</span></h4>
+                            <p>Soft milk dumplings soaked in warm sugar syrup.</p>
+                        </div>
+                        <div class="food-item">
+                            <h4>Rasmalai<span>₹160</span></h4>
+                            <p>Soft cottage cheese patties served in chilled saffron-flavored milk.</p>
+                        </div>
+                        <div class="food-item">
+                            <h4>Gajar Ka Halwa<span>₹150</span></h4>
+                            <p>Traditional carrot pudding cooked with milk, ghee, and dry fruits.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="food-item">
+                            <h4>Double Ka Meetha<span>₹180</span></h4>
+                            <p>Classic Hyderabadi apricot dessert served with fresh cream or ice cream.</p>
+                        </div>
+                        <div class="food-item">
+                            <h4>Qubani Ka Meetha<span>₹220</span></h4>
+                            <p>Classic Hyderabadi apricot dessert served with fresh cream or ice cream.</p>
+                        </div>
+                        <div class="food-item">
+                            <h4>Kheer<span>₹150</span></h4>
+                            <p>Creamy rice pudding flavored with cardamom and garnished with nuts.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="food-item">
+                            <h4>Kulfi<span>₹140</span></h4>
+                            <p>Traditional Indian frozen dessert available in mango, pistachio, and malai flavors.</p>
+                        </div>
+                        <div class="food-item">
+                            <h4>Brownie With Ice Cream<span>₹250</span></h4>
+                            <p>Warm chocolate brownie served with a scoop of vanilla ice cream.</p>
+                        </div>
+                        <div class="food-item">
+                            <h4>Chocolate Lava Cake<span>₹260</span></h4>
+                            <p>Warm chocolate cake with a rich molten chocolate center.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="reservation">
+
+          <div class="reserve-box">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+          <h2>Reservation</h2>
+           <p>Every dish is prepared with fresh ingredients, authentic recipes, and great attention to quality, ensuring a flavorful and satisfying dining experience</p>
+           <a href="#" class="reserve-btn">BOOK A TABLE NOW</a>
+            <h3>Telephone Reservations</h3>
+            <div class="phone">+91 7569048004</div>
+             </div>
+            </section>
+    <footer>
+            <div class="footer">
+                    <div class="foohead">
+                        <div class="logo1">
+                            <div class="logo1-circle"></div>
+                        <h2>NYUS</h2>
+                        </div>
+                        <p>We create comfortable spaces with elegant designs and high-quality craftsmanship. Our goal is to provide reliable services, modern solutions, and exceptional value for every customer.</p>
+                        
+                        <div class="foot">
+                        <i class="fa-brands fa-apple"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                        <div class="foohead"> 
+                            <h2>Our Location</h2>
+                            <div class="location">
+                            <p>2/44, YSR Circle, Main Road, Peddavadugur(vi&Mandal),<br>
+                                 Anantapur Dist, A.P</p>
+                                <p>+91 7569048004</p>
+                                <p><i class="fa-solid fa-location-dot"></i>Get Location</p>
+                            </div>
+                    </div>
+                    <div class="foohead">
+                            <h2>Quick Link</h2>
+                         <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Testimonial</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                         </ul>
+                    </div>
+                    <div class="foohead">
+                            <h2>Opening Hours</h2>
+                        <div class="hours">
+                            <p><i class="fa-regular fa-alarm-clock" class="faat"></i> Monday - Friday</p>
+                            <p>9AM - 10.30PM</p>
+
+                               <p><i class="fa-regular fa-alarm-clock"></i> Saturdat,Sunday</p>
+                                <p>9AM - 12:30AM</p>
+                        </div>
+                        <button class="btnss">Reservation</button>
+                    </div>
+            </div>
+    
+            <div class="bottom">
+                <p>Copyright © 2026 NYUS Restaurant</p>
+                <p>Powered by NYUS Restaurant</p>
+            </div>
+        </footer>
+</body>
+</html>
